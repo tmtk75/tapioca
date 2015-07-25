@@ -1,0 +1,17 @@
+doctype html
+head
+  link(rel="stylesheet", href="/bower_components/primer-css/css/primer.css")
+  link(rel="stylesheet", href="/bower_components/octicons/octicons/octicons.css")
+  script(type="text/javascript", src="/bower_components/jquery/dist/jquery.min.js")
+  script(type="text/javascript", src='/vendor/assets/coffee-script.js')
+  script(type="text/javascript", src="/vendor/assets/jumly.min.js")
+  script(type="text/javascript").
+    window.onerror = function(message) {
+      console.error(message);
+      $("#message").text(message);
+      $("#error").show();
+    }
+body
+  script(type="text/jumly+sequence") !{body}
+  #error.flash.flash-error(style="display: none")
+    | Failed to render diagram due to "<span id="message"></span>".
