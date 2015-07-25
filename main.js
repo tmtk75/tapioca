@@ -149,7 +149,7 @@ app.get('/me', function(req, res) {
 
 app.get('/:username/:_id', function(req, res) {
   if (!req.session.passport.user) {
-    return res.redirect('/');
+    return res.status(404).render("404");
   }
 
   var me = to_me(req);
