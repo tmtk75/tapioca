@@ -76,7 +76,7 @@ const Content = React.createClass({
           </div>
 
           <div className="column one-half">
-            <table className="diagrams">
+            <table className="diagram-list">
               {this.state.diagrams.length > 0 ? thead  : null}
               {this.state.diagrams.map(e => <Item diagram={e}
                                                   selected={this.state.selectedDiagram === e}
