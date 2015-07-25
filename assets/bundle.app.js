@@ -967,9 +967,17 @@
 	        "Last modified"
 	      )
 	    );
+	    var c_alert = classNames({ flash: true, "flash-warn": true, "go-off": this.state.alertOff });
 	    return React.createElement(
 	      "div",
 	      null,
+	      React.createElement(
+	        "div",
+	        { className: c_alert },
+	        React.createElement("span", { onClick: this._turnOffAlert, className: "octicon octicon-x flash-close js-flash-close" }),
+	        React.createElement("span", { className: "octicon octicon-alert" }),
+	        "This service is in beta. Your data may be vanished without notice."
+	      ),
 	      React.createElement(
 	        "div",
 	        { className: "columns" },
@@ -1087,7 +1095,8 @@
 	      diagrams: [],
 	      selectedDiagram: null,
 	      name: "",
-	      error: null
+	      error: null,
+	      alertOff: false
 	    };
 	  },
 
@@ -1206,6 +1215,10 @@
 
 	  _isLessThan3: function _isLessThan3(name) {
 	    return name.length < 3 ? ERR_LESS_THAN_3 : 0;
+	  },
+
+	  _turnOffAlert: function _turnOffAlert() {
+	    this.setState({ alertOff: true });
 	  }
 
 	});
@@ -1410,7 +1423,7 @@
 
 
 	// module
-	exports.push([module.id, ".header .menu-items {\n  display: inline-block;\n  margin-right: 1rem;\n}\n.signin-form {\n  text-align: center;\n  margin-top: 8rem;\n}\n.footer {\n  text-align: center;\n}\n.main > .header {\n  padding: 10px 0 10px 0;\n  min-width: 960px;\n  background-color: #f5f5f5;\n  border-bottom: 1px solid #e5e5e5;\n  margin-bottom: 2px;\n}\n.main > .header .logo {\n  margin: 0;\n  padding: 0;\n}\n.main > .header .sign-up {\n  text-align: right;\n}\n.diagram-text {\n  width: 100%;\n  height: 12rem;\n  font-family: \"consolas\", \"monospace\";\n  margin-bottom: 0.25rem;\n}\ninput,\nbutton {\n  margin-right: 0.25rem;\n}\nli {\n  list-style-type: none;\n}\n.examples li {\n  display: inline-block;\n  margin-left: 1rem;\n  margin-right: 1rem;\n}\n.diagram {\n  margin-left: auto;\n  margin-right: auto;\n}\n.diagram-list-container {\n  height: 16rem;\n  overflow-y: auto;\n}\ntable.diagram-list {\n  width: 100%;\n}\ntable.diagram-list th {\n  height: 1.5rem;\n}\ntable.diagram-list td {\n  height: 1.5rem;\n  padding-right: 1rem;\n}\ntable.diagram-list .name {\n  padding-left: 1rem;\n  min-width: 8rem;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\ntable.diagram-list .image {\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\ntable.diagram-list tr.selected {\n  background-color: #e2eef9;\n}\ntable.diagram-list .name {\n  width: 50%;\n}\ntable.diagram-list .mtime {\n  width: 20%;\n}\ntable.diagram-list .remove,\ntable.diagram-list .ulink,\ntable.diagram-list .image {\n  width: 10%;\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, ".header .menu-items {\n  display: inline-block;\n  margin-right: 1rem;\n}\n.signin-form {\n  text-align: center;\n  margin-top: 8rem;\n}\n.footer {\n  text-align: center;\n}\n.main > .header {\n  padding: 10px 0 10px 0;\n  min-width: 960px;\n  background-color: #f5f5f5;\n  border-bottom: 1px solid #e5e5e5;\n  margin-bottom: 2px;\n}\n.main > .header .logo {\n  margin: 0;\n  padding: 0;\n}\n.main > .header .sign-up {\n  text-align: right;\n}\n.diagram-text {\n  width: 100%;\n  height: 12rem;\n  font-family: \"consolas\", \"monospace\";\n  margin-bottom: 0.25rem;\n}\ninput,\nbutton {\n  margin-right: 0.25rem;\n}\nli {\n  list-style-type: none;\n}\n.examples li {\n  display: inline-block;\n  margin-left: 1rem;\n  margin-right: 1rem;\n}\n.diagram {\n  margin-left: auto;\n  margin-right: auto;\n}\n.go-off {\n  display: none;\n}\n.diagram-list-container {\n  height: 16rem;\n  overflow-y: auto;\n}\ntable.diagram-list {\n  width: 100%;\n}\ntable.diagram-list th {\n  height: 1.5rem;\n}\ntable.diagram-list td {\n  height: 1.5rem;\n  padding-right: 1rem;\n}\ntable.diagram-list .name {\n  padding-left: 1rem;\n  min-width: 8rem;\n  border-top-left-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\ntable.diagram-list .image {\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\ntable.diagram-list tr.selected {\n  background-color: #e2eef9;\n}\ntable.diagram-list .name {\n  width: 50%;\n}\ntable.diagram-list .mtime {\n  width: 20%;\n}\ntable.diagram-list .remove,\ntable.diagram-list .ulink,\ntable.diagram-list .image {\n  width: 10%;\n  text-align: center;\n}\n", ""]);
 
 	// exports
 

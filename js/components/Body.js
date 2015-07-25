@@ -52,8 +52,14 @@ const Content = React.createClass({
                   <th>Name</th>
                   <th>Last modified</th>
                 </thead>
+    var c_alert = classNames({flash:true, "flash-warn":true, "go-off": this.state.alertOff});
     return (
       <div>
+        <div className={c_alert}>
+          <span onClick={this._turnOffAlert} className="octicon octicon-x flash-close js-flash-close"></span>
+          <span className="octicon octicon-alert"></span>
+          This service is in beta. Your data may be vanished without notice.
+        </div>
         <div className="columns">
           <div className="column one-half">
             <div>
@@ -107,6 +113,7 @@ const Content = React.createClass({
       selectedDiagram: null,
       name: "",
       error: null,
+      alertOff: false,
     }
   },
 
@@ -213,6 +220,10 @@ const Content = React.createClass({
 
   _isLessThan3(name) {
     return name.length < 3 ? ERR_LESS_THAN_3 : 0;
+  },
+
+  _turnOffAlert() {
+    this.setState({alertOff: true});
   },
 
 });
