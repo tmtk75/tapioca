@@ -75,13 +75,15 @@ const Content = React.createClass({
             </ul>
           </div>
 
-          <div className="column one-half">
+          <div className="column one-half diagram-list-container">
             <table className="diagram-list">
               {this.state.diagrams.length > 0 ? thead  : null}
+              <tbody>
               {this.state.diagrams.map(e => <Item diagram={e}
                                                   selected={this.state.selectedDiagram === e}
                                                   handler={this}
                                                   key={e._id}/>)}
+              </tbody>
             </table>
             {this.state.diagrams.length == 0 ? <div className="blankslate"><p>There is no diagram.</p></div> : null}
           </div>
