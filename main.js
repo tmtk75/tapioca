@@ -148,6 +148,10 @@ app.get('/me', function(req, res) {
 });
 
 app.get('/:username/:_id', function(req, res) {
+  if (!req.session.passport.user) {
+    return res.redirect('/');
+  }
+
   var me = to_me(req);
   kii.KiiUser.authenticate(me.kiicloud.user.username, me.kiicloud.user.password)
     .then(user => {
