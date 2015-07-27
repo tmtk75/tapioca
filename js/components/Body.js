@@ -78,6 +78,7 @@ const Content = React.createClass({
               <li><a href="#" onClick={this._examples("ex1")}>2</a></li>
               <li><a href="#" onClick={this._examples("ex2")}>3</a></li>
               <li><a href="#" onClick={this._examples("ex3")}>4</a></li>
+              <li><a href="#" onClick={this._examples("ex4")}>5</a></li>
             </ul>
           </div>
 

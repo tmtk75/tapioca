@@ -32,6 +32,23 @@ export default {
       @message "aquire lock", "Database"
     @message "do something"
     @message "release lock", "Database"
-    @reply "", "Browser"
-`
+    @reply "", "Browser"`,
+
+  ex4: `\
+@found "Client", ->
+
+  @message "ClientHello", "Server", ->
+    @note "Hi! I'm a client, let's talk in SSL."
+    @message "ServerHello", "Client", ->
+    @message "Certificate", "Client", ->
+    @message "ServerKeyExchange", "Client", ->
+    @message "ServerHelloDone", "Client", ->
+
+  @message "ClientKeyExchange", "Server", ->
+  @message "[ChangeCipherSpec]", "Server", ->
+  @message "Finished", "Server", ->
+    @message "Finished", "Client"
+
+client.css "margin-right":"140px"`,
+
 }

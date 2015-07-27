@@ -1046,6 +1046,15 @@
 	                { href: "#", onClick: this._examples("ex3") },
 	                "4"
 	              )
+	            ),
+	            React.createElement(
+	              "li",
+	              null,
+	              React.createElement(
+	                "a",
+	                { href: "#", onClick: this._examples("ex4") },
+	                "5"
+	              )
 	            )
 	          )
 	        ),
@@ -1384,7 +1393,10 @@
 
 	  ex2: "@found \"You\", ->\n  @alt\n    \"[found]\": ->\n      @loop ->\n        @message \"request\", \"HTTP Server\"\n        @note \"NOTE: This doesn't make sense :) just an example\"\n    \"[missing]\": ->\n      @message \"new\", \"HTTP Session\"\n  @ref \"respond resource\"",
 
-	  ex3: "@found \"Browser\", ->\n  @message \"http request\", \"HTTP Server\", ->\n    @create \"HTTP Session\", ->\n      @message \"init\"\n      @message \"aquire lock\", \"Database\"\n    @message \"do something\"\n    @message \"release lock\", \"Database\"\n    @reply \"\", \"Browser\"\n"
+	  ex3: "@found \"Browser\", ->\n  @message \"http request\", \"HTTP Server\", ->\n    @create \"HTTP Session\", ->\n      @message \"init\"\n      @message \"aquire lock\", \"Database\"\n    @message \"do something\"\n    @message \"release lock\", \"Database\"\n    @reply \"\", \"Browser\"",
+
+	  ex4: "@found \"Client\", ->\n\n  @message \"ClientHello\", \"Server\", ->\n    @note \"Hi! I'm a client, let's talk in SSL.\"\n    @message \"ServerHello\", \"Client\", ->\n    @message \"Certificate\", \"Client\", ->\n    @message \"ServerKeyExchange\", \"Client\", ->\n    @message \"ServerHelloDone\", \"Client\", ->\n\n  @message \"ClientKeyExchange\", \"Server\", ->\n  @message \"[ChangeCipherSpec]\", \"Server\", ->\n  @message \"Finished\", \"Server\", ->\n    @message \"Finished\", \"Client\"\n\nclient.css \"margin-right\":\"140px\""
+
 	};
 	module.exports = exports["default"];
 
