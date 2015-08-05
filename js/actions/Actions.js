@@ -4,7 +4,6 @@ const App          = require('../dispatcher/App.js');
 const UserStore    = require("../stores/UserStore.js");
 const KiiHelper    = require('../helper/KiiHelper.js');
 const BaconHelper  = require('../helper/BaconHelper.js');
-const GithubHelper = require("../helper/GitHubHelper.js");
 const Immutable    = require("immutable");
 
 const diagrams_ = UserStore.diagrams_;
