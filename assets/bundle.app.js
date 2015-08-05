@@ -1350,14 +1350,29 @@
 	    return React.createElement(
 	      "div",
 	      { className: "footer" },
-	      "© 2015 ",
 	      React.createElement(
-	        "a",
-	        { href: "https://github.com/tmtk75" },
-	        "tmtk75"
+	        "div",
+	        null,
+	        "© 2015 ",
+	        React.createElement(
+	          "a",
+	          { href: "https://github.com/tmtk75" },
+	          "tmtk75"
+	        ),
+	        " v",
+	        this.state.version
 	      ),
-	      " v",
-	      this.state.version
+	      React.createElement(
+	        "div",
+	        null,
+	        React.createElement("span", { className: "octicon octicon-mark-github" }),
+	        " ",
+	        React.createElement(
+	          "a",
+	          { target: "github.com", href: "https://github.com/tmtk75/tapioca" },
+	          "Fork me!"
+	        )
+	      )
 	    );
 	  },
 
